@@ -3,6 +3,8 @@ import ToDos from '../models/todos.ts';
 
 export const getTodosFromJson: () => Promise<ToDos[]> = async () => {
     try {
+
+        // Read Files In Deno
         const data: any = await Deno.readFile(DB_PATH);
 
         // Decode Data From File
@@ -22,6 +24,7 @@ export const writeDataToJson: (todos: ToDos[]) => Promise<void> = async (todos: 
     try {
         // encode Json
         const encode = new TextEncoder();
+        // Write Files in Deno
         await Deno.writeFile(DB_PATH, encode.encode(JSON.stringify(todos)))
     } catch (err) {
         console.error(err.message);
