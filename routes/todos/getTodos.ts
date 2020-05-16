@@ -1,6 +1,5 @@
 import { Response } from "https://deno.land/x/oak/mod.ts";
 import ToDos from '../../models/todos.ts';
-import id from '../../services/createIds.ts'
 import { getTodosFromJson } from '../../db/db.ts';
 
 
